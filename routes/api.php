@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\RealTimeController;
 use App\Http\Controllers\Api\TrendingController;
 use App\Http\Controllers\Api\UserGuideController;
 
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::apiResource('trendings', TrendingController::class);
 Route::apiResource('userGuide', UserGuideController::class);
+Route::apiResource('realTime', RealTimeController::class);
+
