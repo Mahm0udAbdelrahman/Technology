@@ -17,28 +17,36 @@ class RealTimeRepository implements RealTimeInterface
         return $data;
     }
 
- 
+
     public function store(array $data)
     {
-     
-        $chart =[];
-        foreach($data['charts'] as $charts)
-        {
-         $chart[] = RealTime::create( $charts);  
+        $charts = [];
+        foreach ($data['charts'] as $chart) {
+
+            if (isset($chart['series']) && is_string($chart['series'])) {
+                $chart['series'] = json_decode($chart['series'], JSON_UNESCAPED_SLASHES);
+            }
+            if (isset($chart['categories']) && is_string($chart['categories'])) {
+                $chart['categories'] = json_decode($chart['categories'], JSON_UNESCAPED_SLASHES);
+            }
+
+            $charts[] = RealTime::create($chart);
         }
-        return $chart;
-     }
+        return $charts;
+    }
+
+
 
     public function show(string $id)
     {
         return RealTime::findOrFail($id);
     }
 
- 
+
     public function update($id, array $data)
     {
         $RealTime = RealTime::findOrFail($id);
-         
+
         $RealTime->update($data);
         return $RealTime;
     }
@@ -48,7 +56,7 @@ class RealTimeRepository implements RealTimeInterface
     public function destroy(string $id)
     {
         $RealTime = RealTime::findOrFail($id);
-         
+
 
         $RealTime->delete();
 

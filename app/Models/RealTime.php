@@ -20,6 +20,6 @@ class RealTime extends Model
 
     protected $casts = [
         'series' => 'array',
-        'category' => 'array',
+        'categories' => 'array',
     ];
 }

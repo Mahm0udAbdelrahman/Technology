@@ -37,14 +37,14 @@ class RealTimeController extends Controller
     {
        
         
-        $RealTime =  $this->RealTime->store($request->validated());
+        return  $this->RealTime->store($request->validated());
         // return response()->json([
         //     'message' => 'RealTime store successfully',
         //     'data' => new RealTimeResource::collection($RealTime)
         // ]);
         
 
-        return ApiResource::getResponse(201,'all data' , $RealTime);
+        // return ApiResource::getResponse(201,'all data' , $RealTime);
 
     }
 
