@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserGuideSeeder::class);
         // $this->call(TrendingSeeder::class);
         $this->call(RealTimeSeeder::class);
+        $this->call(FAQSeeder::class);
 
     }
 }

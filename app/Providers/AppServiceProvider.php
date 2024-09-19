@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interface\FAQInterface;
+use App\Repositories\FAQRepository;
 use App\Interface\RealTimeInterface;
 use App\Interface\TrendingInterface;
 use App\Interface\UserGuideInterface;
@@ -20,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(TrendingInterface::class, TraningRepository::class);
         $this->app->bind(UserGuideInterface::class, UserGuideRepository::class);
         $this->app->bind(RealTimeInterface::class, RealTimeRepository::class);
+        $this->app->bind(FAQInterface::class, FAQRepository::class);
 
 
     }

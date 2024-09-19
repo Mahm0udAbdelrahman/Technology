@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\FAQController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RealTimeController;
@@ -22,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('trendings', TrendingController::class);
 Route::apiResource('userGuide', UserGuideController::class);
 Route::apiResource('realTime', RealTimeController::class);
+Route::apiResource('faq', FAQController::class);
 
