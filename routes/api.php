@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\FAQController;
+use App\Http\Controllers\Api\TableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RealTimeController;
@@ -24,4 +25,5 @@ Route::apiResource('trendings', TrendingController::class);
 Route::apiResource('userGuide', UserGuideController::class);
 Route::apiResource('realTime', RealTimeController::class);
 Route::apiResource('faq', FAQController::class);
+Route::apiResource('table', TableController::class);
 
