@@ -16,10 +16,10 @@ class FAQController extends Controller
 
      protected $FAQ;
 
-     public function __construct(FAQInterface $FAQ )
-     {
+    public function __construct(FAQInterface $FAQ )
+    {
         $this->FAQ = $FAQ;
-     }
+    }
     public function index()
     {
          $FAQ =  $this->FAQ->index();
@@ -33,7 +33,7 @@ class FAQController extends Controller
     public function store(StoreRequest $request)
     {
         $FAQ  =  $this->FAQ->store($request->validated());
-         return ApiResource::getResponse(201,'all data' , new FAQResource($FAQ) );
+         return ApiResource::getResponse(201,'FAQ store' , new FAQResource($FAQ) );
     }
 
     /**
@@ -63,6 +63,6 @@ class FAQController extends Controller
     {
         $this->FAQ->destroy($id);
 
-        return response()->json(['message' => 'Trending deleted successfully']);
+        return response()->json(['message' => 'FAQ deleted successfully']);
     }
 }
