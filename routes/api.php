@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RealTimeController;
 use App\Http\Controllers\Api\TrendingController;
 use App\Http\Controllers\Api\UserGuideController;
+use App\Http\Controllers\Api\TutorialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,6 @@ Route::apiResource('userGuide', UserGuideController::class);
 Route::apiResource('realTime', RealTimeController::class);
 Route::apiResource('faq', FAQController::class);
 Route::apiResource('table', TableController::class);
+Route::apiResource('tutorial', TutorialController::class);
+Route::get('countTrendings',[TrendingController::class,'count']);
 

@@ -58,4 +58,11 @@ class TraningRepository implements TrendingInterface
 
         return response()->json(['success' => true, 'message' => 'Trending item and its image deleted successfully.']);
     }
+
+    public function count()
+    {
+       
+        $count = Trending::count();
+        return $count;
+    }
 }

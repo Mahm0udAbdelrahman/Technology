@@ -7,11 +7,13 @@ use App\Interface\TableInterface;
 use App\Repositories\FAQRepository;
 use App\Interface\RealTimeInterface;
 use App\Interface\TrendingInterface;
+use App\Interface\TutorialInterface;
 use App\Interface\UserGuideInterface;
 use App\Repositories\TableRepository;
 use App\Repositories\TraningRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\RealTimeRepository;
+use App\Repositories\TutorialRepository;
 use App\Repositories\UserGuideRepository;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(RealTimeInterface::class, RealTimeRepository::class);
         $this->app->bind(FAQInterface::class, FAQRepository::class);
         $this->app->bind(TableInterface::class, TableRepository::class);
+        $this->app->bind(TutorialInterface::class, TutorialRepository::class);
 
 
     }

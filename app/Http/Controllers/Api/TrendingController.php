@@ -82,4 +82,13 @@ class TrendingController extends Controller
 
         return response()->json(['message' => 'Trending deleted successfully']);
     }
+
+
+    public function count()
+    {
+        $count =   $this->TrendingRepository->count();
+
+        return ApiResource::getResponse(201,'Trending show' ,  $count);
+    }
+
 }

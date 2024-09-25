@@ -19,4 +19,5 @@ interface TrendingInterface
     public function update($id, array $data) ;
  
     public function destroy(string $id);
+    public function count();
 }
