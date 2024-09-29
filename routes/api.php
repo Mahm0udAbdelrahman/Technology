@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\Api\FAQController;
-use App\Http\Controllers\Api\TableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\FAQController;
+use App\Http\Controllers\Api\TableController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\RealTimeController;
 use App\Http\Controllers\Api\TrendingController;
-use App\Http\Controllers\Api\UserGuideController;
 use App\Http\Controllers\Api\TutorialController;
+use App\Http\Controllers\Api\UserGuideController;
+use App\Http\Controllers\Api\DataMangmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +30,19 @@ Route::apiResource('realTime', RealTimeController::class);
 Route::apiResource('faq', FAQController::class);
 Route::apiResource('table', TableController::class);
 Route::apiResource('tutorial', TutorialController::class);
+Route::apiResource('contact', ContactController::class);
+
+
+Route::apiResource('data-mangment', DataMangmentController::class);
+Route::patch('data-mangment/{id}/restore/get', [DataMangmentController::class,'restore']);
+Route::get('data-mangment/showDelete/get', [DataMangmentController::class,'ShowDelete']);
+Route::delete('data-mangment/{id}/forcedelete/delete', [DataMangmentController::class,'force']);
+Route::patch('/data-mangment/restore-multiple/get', [DataMangmentController::class, 'restoreMultiple']);  
+
+Route::delete('/data-mangment/force-delete-multiple/destory', [DataMangmentController::class, 'forceDeleteMultiple']);  
+
+
+
+
 Route::get('countTrendings',[TrendingController::class,'count']);
 

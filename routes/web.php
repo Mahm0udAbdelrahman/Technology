@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\MailContact;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get("send-notificaton",function(){
+
+    try{
+        event(new \App\Events\NotificationEvent('herllo'));
+    }catch(Exception $ex)
+    {
+        return $ex->getMessage();
+    }
+
+    return "success";
+
 });
