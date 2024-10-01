@@ -8,7 +8,7 @@ use App\Interface\TrendingInterface;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 
-class TraningRepository implements TrendingInterface
+class TrendingRepository implements TrendingInterface
 {
     use Imageable;
     public function index()

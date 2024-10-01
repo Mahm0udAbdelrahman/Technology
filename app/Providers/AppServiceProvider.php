@@ -12,7 +12,7 @@ use App\Interface\TutorialInterface;
 use App\Interface\UserGuideInterface;
 use App\Repositories\TableRepository;
 use App\Repositories\ContactRepository;
-use App\Repositories\TraningRepository;
+use App\Repositories\TrendingRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Interface\DataMangmentInterface;
 use App\Repositories\RealTimeRepository;
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(TrendingInterface::class, TraningRepository::class);
+        $this->app->bind(TrendingInterface::class, TrendingRepository::class);
         $this->app->bind(UserGuideInterface::class, UserGuideRepository::class);
         $this->app->bind(RealTimeInterface::class, RealTimeRepository::class);
         $this->app->bind(FAQInterface::class, FAQRepository::class);

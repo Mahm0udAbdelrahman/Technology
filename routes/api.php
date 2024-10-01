@@ -38,7 +38,6 @@ Route::patch('data-mangment/{id}/restore/get', [DataMangmentController::class,'r
 Route::get('data-mangment/showDelete/get', [DataMangmentController::class,'ShowDelete']);
 Route::delete('data-mangment/{id}/forcedelete/delete', [DataMangmentController::class,'force']);
 Route::patch('/data-mangment/restore-multiple/get', [DataMangmentController::class, 'restoreMultiple']);  
-
 Route::delete('/data-mangment/force-delete-multiple/destory', [DataMangmentController::class, 'forceDeleteMultiple']);  
 
 
