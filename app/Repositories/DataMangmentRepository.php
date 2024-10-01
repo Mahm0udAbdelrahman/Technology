@@ -76,6 +76,7 @@ class DataMangmentRepository implements DataMangmentInterface
         return response()->json(['message' => 'Records restored successfully.']);
     }
 
+
     public function forceDeleteMultiple(array $ids)
     {
         Report::withTrashed()->whereIn('id', $ids)->forceDelete();

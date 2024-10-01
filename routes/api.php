@@ -10,6 +10,9 @@ use App\Http\Controllers\Api\TrendingController;
 use App\Http\Controllers\Api\TutorialController;
 use App\Http\Controllers\Api\UserGuideController;
 use App\Http\Controllers\Api\DataMangmentController;
+use App\Http\Controllers\Api\DataInsightController;
+use App\Http\Controllers\Api\TechnologyController;
+use App\Http\Controllers\Api\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +34,9 @@ Route::apiResource('faq', FAQController::class);
 Route::apiResource('table', TableController::class);
 Route::apiResource('tutorial', TutorialController::class);
 Route::apiResource('contact', ContactController::class);
+Route::apiResource('chart', ChartController::class);
+Route::apiResource('technology', TechnologyController::class);
+Route::apiResource('DataInsight', DataInsightController::class);
 
 
 Route::apiResource('data-mangment', DataMangmentController::class);

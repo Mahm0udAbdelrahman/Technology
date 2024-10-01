@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('real_times', function (Blueprint $table) {
+        Schema::create('insight_technologies', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+            $table->foreignId('data_insight_id')->nullable()->constrained('data_insights','id')->cascadeOnDelete();     
+            $table->foreignId('technology_id')->nullable()->constrained('technologies','id')->cascadeOnDelete();     
             $table->string('title')->nullable();
-            $table->text('text')->nullable();
-            $table->json('series');
-            $table->json( 'categories');
-            $table->boolean('real_time')->default(0);
+            $table->string('rate')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('real_times');
+        Schema::dropIfExists('insight_technologies');
     }
 };

@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('real_times', function (Blueprint $table) {
+        Schema::create('data_insights', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('title')->nullable();
-            $table->text('text')->nullable();
-            $table->json('series');
-            $table->json( 'categories');
-            $table->boolean('real_time')->default(0);
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('real_times');
+        Schema::dropIfExists('data_insights');
     }
 };

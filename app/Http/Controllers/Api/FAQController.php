@@ -16,7 +16,7 @@ class FAQController extends Controller
 
      protected $FAQ;
 
-    public function __construct(FAQInterface $FAQ )
+    public function __construct(FAQInterface $FAQ)
     {
         $this->FAQ = $FAQ;
     }
